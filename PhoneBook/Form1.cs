@@ -48,7 +48,14 @@ namespace PhoneBook
 
         private void dataGridView1_KeyDown(object sender, KeyEventArgs e)
         {
+            if (e.KeyCode == Keys.Delete)
+            {
 
+                if (MessageBox.Show("Czy na pewno usunąć?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    phoneBookBindingSource.RemoveCurrent();
+
+
+            }
         }
 
         private void Dodaj_Click(object sender, EventArgs e)
